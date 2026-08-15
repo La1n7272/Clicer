@@ -751,4 +751,3 @@ class Ui_MainWindow(object):
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", None))
         self.label_54.setText(QCoreApplication.translate("MainWindow", u"\u041e \u0441\u0435\u0431\u0435", None))
     # retranslateUi
-
