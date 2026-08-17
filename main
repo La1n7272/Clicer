@@ -16,11 +16,72 @@ from designer import Ui_MainWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
-        super().__init__
+        super().__init__()
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        if not os.path.exists("dann.json"):
+            self.ui.stackedWidget.setCurrentIndex(3)
+        else:
+            self.ui.stackedWidget.setCurrentIndex(0)
+        self.q = {
+                        "name" : self.ui.lineEdit_im_pol.text(),
+                        "o sebe" : self.ui.lineEdit_o_sebe.text(),
+                        "monet" : 0,
+                        "clici" : 0,
+                        "za clic" : 1,
+                        "bonus" : 1,
+        
+                    }
+
+        self.ui.pushButton_cup_126.clicked.connect(self.finish)
+        self.ui.pushButton_clic.clicked.connect(self.clic)
+
+    def clic(self):
+         self.s = int(self.ui.label_14.text())
+
+         self.c= int(self.ui.label_gl_balance.text())
+
+         self.n = self.s + self.c
+
+         self.ui.label_gl_balance.setText(self.n)
+
+
+
+         self.k = int(self.ui.label_gl_clici.text())
+         self.k += 1
+
+    def finish(self):
+            self.ui.stackedWidget.setCurrentIndex(0)
+            self.ui.label_gl_balance.setText(self.q["monet"])
+            self.ui.label_gl_clici.setText(self.q["clici"])
+            self.ui.label_14.setText(self.q["za clic"])
+            self.ui.label_16.setText(f"X{self.q["bonus"]}")
+            with open("dann.json","w",encoding="utf-8") as f:
+                json.dump(self.q,f,ensure_ascii=False,indent=4)            
+
+    def clouseEvent(self,event):
+            self.monet = int(self.ui.label_gl_balance.text())
+            self.clici = int(self.ui.label_gl_clici.text())
+            self.zaclic = int(self.ui.label_14.text())
+            self.bonus = int(self.ui.label_16.text())
+
+            self.q["monet"] = self.monet
+            self.q["clici"] = self.clici
+            self.q["za clic"] = self.zaclic
+            self.q["bonus"] = self.bonus
+
+            with open("dann.json","w",encoding="utf-8") as f:
+                json.dump(self.q,f,ensure_ascii=False,indent=4)
+            event.accept()
+
+
+
+
+
+
+                
 
 if __name__ == "__main__":
     app = QApplication([])

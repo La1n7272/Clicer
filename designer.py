@@ -661,6 +661,12 @@ class Ui_MainWindow(object):
         self.lineEdit_o_sebe.setStyleSheet(u"border: none;\n"
 "border-color: rgb(0, 0, 0);\n"
 "border-radius: 10px;")
+        self.pushButton_cup_126 = QPushButton(self.page_2)
+        self.pushButton_cup_126.setObjectName(u"pushButton_cup_126")
+        self.pushButton_cup_126.setGeometry(QRect(500, 340, 141, 51))
+        self.pushButton_cup_126.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 15px;")
         self.stackedWidget.addWidget(self.page_2)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -750,4 +756,5 @@ class Ui_MainWindow(object):
         self.pushButton_23.setText("")
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", None))
         self.label_54.setText(QCoreApplication.translate("MainWindow", u"\u041e \u0441\u0435\u0431\u0435", None))
+        self.pushButton_cup_126.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c", None))
     # retranslateUi
