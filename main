@@ -25,41 +25,65 @@ class MainWindow(QMainWindow):
             self.ui.stackedWidget.setCurrentIndex(3)
         else:
             self.ui.stackedWidget.setCurrentIndex(0)
-        self.q = {
-                        "name" : self.ui.lineEdit_im_pol.text(),
-                        "o sebe" : self.ui.lineEdit_o_sebe.text(),
-                        "monet" : 0,
-                        "clici" : 0,
-                        "za clic" : 1,
-                        "bonus" : 1,
         
-                    }
 
         self.ui.pushButton_cup_126.clicked.connect(self.finish)
         self.ui.pushButton_clic.clicked.connect(self.clic)
+        self.ui.pushButton_g_prof.clicked.connect(self.open_prof)
+        self.ui.pushButton_23.clicked.connect(self.open_glav)
+        self.ui.pushButton_glav_2.clicked.connect(self.open_glav)
+        self.ui.pushButton_magaz.clicked.connect(self.open_magaz)
+    def open_magaz(self):
+         self.ui.stackedWidget.setCurrentIndex(2)
+    def open_glav(self):
+         self.ui.stackedWidget.setCurrentIndex(0)
+    def open_prof(self):
+         self.ui.stackedWidget.setCurrentIndex(1)
 
     def clic(self):
          self.s = int(self.ui.label_14.text())
 
          self.c= int(self.ui.label_gl_balance.text())
 
+         self.c_clic = int(self.ui.label_16.text().replace("X", ""))
+
+         self.s *= self.c_clic
+
          self.n = self.s + self.c
 
-         self.ui.label_gl_balance.setText(self.n)
+         self.ui.label_gl_balance.setText(str(self.n))
 
 
 
          self.k = int(self.ui.label_gl_clici.text())
          self.k += 1
+         self.ui.label_gl_clici.setText(str(self.k))        
 
     def finish(self):
+            print("1")
+            self.q = {
+                        "name" : self.ui.lineEdit_im_pol.text(),
+                        "o sebe" : self.ui.lineEdit_o_sebe.text(),
+                        "monet" : 0,
+                        "clici" : 0,
+                        "za clic" : 1,
+                        "bonus" : 1,
+                    
+                                }
+
+            
             self.ui.stackedWidget.setCurrentIndex(0)
-            self.ui.label_gl_balance.setText(self.q["monet"])
-            self.ui.label_gl_clici.setText(self.q["clici"])
-            self.ui.label_14.setText(self.q["za clic"])
-            self.ui.label_16.setText(f"X{self.q["bonus"]}")
+            self.ui.label_gl_balance.setText(str(self.q["monet"]))
+            self.ui.label_gl_clici.setText(str(self.q["clici"]))
+            self.ui.label_14.setText(str(self.q["za clic"]))
+            self.ui.label_16.setText(str(f"X{self.q["bonus"]}"))
+            print(2)
             with open("dann.json","w",encoding="utf-8") as f:
-                json.dump(self.q,f,ensure_ascii=False,indent=4)            
+                json.dump(self.q,f,ensure_ascii=False,indent=4)
+            print(3)
+            self.ui.label_im_pol.setText(str(self.q["name"]))
+            self.ui.label_o_sebe.setText(str(self.q["o sebe"]))   
+            print(4)
 
     def clouseEvent(self,event):
             self.monet = int(self.ui.label_gl_balance.text())
