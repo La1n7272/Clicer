@@ -40,7 +40,8 @@ class Ui_MainWindow(object):
         font.setBold(True)
         self.pushButton_clic.setFont(font)
         self.pushButton_clic.setStyleSheet(u"QPushButton{\n"
-"	background-color: rgb(103, 255, 255);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.037, x2:0.499, y2:0.916955, stop:0 rgba(0, 234, 255, 255), stop:0.994318 rgba(255, 255, 255, 255));\n"
+"\n"
 "border: 3px solid white;\n"
 "border-radius: 101px;\n"
 "padding: 0px;\n"
@@ -56,16 +57,18 @@ class Ui_MainWindow(object):
         self.frame.setGeometry(QRect(120, 20, 591, 51))
         self.frame.setStyleSheet(u"border-radius: 25px;\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(103, 255, 255);")
+"background-color: rgb(103, 255, 255);\n"
+"")
         self.frame.setFrameShape(QFrame.Shape.NoFrame)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.label_gl_balance = QLabel(self.frame)
         self.label_gl_balance.setObjectName(u"label_gl_balance")
-        self.label_gl_balance.setGeometry(QRect(120, 10, 49, 16))
+        self.label_gl_balance.setGeometry(QRect(120, 10, 241, 16))
         font1 = QFont()
         font1.setPointSize(13)
         self.label_gl_balance.setFont(font1)
         self.label_gl_balance.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_gl_balance.setWordWrap(True)
         self.label_gl_monet = QLabel(self.frame)
         self.label_gl_monet.setObjectName(u"label_gl_monet")
         self.label_gl_monet.setGeometry(QRect(120, 30, 71, 16))
@@ -74,8 +77,9 @@ class Ui_MainWindow(object):
         self.label_gl_monet.setFont(font2)
         self.label_gl_clici = QLabel(self.frame)
         self.label_gl_clici.setObjectName(u"label_gl_clici")
-        self.label_gl_clici.setGeometry(QRect(410, 10, 49, 16))
+        self.label_gl_clici.setGeometry(QRect(410, 10, 171, 16))
         self.label_gl_clici.setFont(font1)
+        self.label_gl_clici.setWordWrap(True)
         self.label_4 = QLabel(self.frame)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(410, 30, 61, 16))
@@ -108,6 +112,7 @@ class Ui_MainWindow(object):
         font3.setPointSize(15)
         self.label_14.setFont(font3)
         self.label_14.setStyleSheet(u"color: rgb(103, 255, 255);")
+        self.label_14.setWordWrap(True)
         self.label_15 = QLabel(self.frame_4)
         self.label_15.setObjectName(u"label_15")
         self.label_15.setGeometry(QRect(200, 0, 121, 31))
@@ -139,7 +144,7 @@ class Ui_MainWindow(object):
 "QPushButton:pressed{\n"
 "padding-top: 2px;     \n"
 "padding-left: 2px;\n"
-"background-color: rgb(78, 193, 193);\n"
+"background-color: rgb(212, 212, 212);\n"
 "}")
         icon = QIcon()
         icon.addFile(u":/images/images/free-icon-profile-15862013.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -190,17 +195,10 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
         self.line_2 = QFrame(self.frame_3)
         self.line_2.setObjectName(u"line_2")
-        self.line_2.setGeometry(QRect(10, 60, 200, 1))
+        self.line_2.setGeometry(QRect(10, 66, 200, 2))
         self.line_2.setStyleSheet(u"background-color: rgb(213, 213, 213);")
         self.line_2.setFrameShape(QFrame.Shape.HLine)
         self.line_2.setFrameShadow(QFrame.Shadow.Sunken)
-        self.line_4 = QFrame(self.frame_3)
-        self.line_4.setObjectName(u"line_4")
-        self.line_4.setGeometry(QRect(10, 200, 200, 1))
-        self.line_4.setStyleSheet(u"background-color: rgb(213, 213, 213);\n"
-"")
-        self.line_4.setFrameShape(QFrame.Shape.HLine)
-        self.line_4.setFrameShadow(QFrame.Shadow.Sunken)
         self.label_pl1 = QLabel(self.frame_3)
         self.label_pl1.setObjectName(u"label_pl1")
         self.label_pl1.setGeometry(QRect(20, 20, 71, 21))
@@ -219,40 +217,98 @@ class Ui_MainWindow(object):
         self.pushButton_cup_125 = QPushButton(self.frame_3)
         self.pushButton_cup_125.setObjectName(u"pushButton_cup_125")
         self.pushButton_cup_125.setGeometry(QRect(124, 16, 71, 31))
-        self.pushButton_cup_125.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_cup_125.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         icon3 = QIcon()
         icon3.addFile(u":/images/images/free-icon-coin-1667808.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_cup_125.setIcon(icon3)
         self.pushButton_cup450 = QPushButton(self.frame_3)
         self.pushButton_cup450.setObjectName(u"pushButton_cup450")
         self.pushButton_cup450.setGeometry(QRect(124, 84, 71, 31))
-        self.pushButton_cup450.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_cup450.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_cup450.setIcon(icon3)
         self.pushButton_cup1250 = QPushButton(self.frame_3)
         self.pushButton_cup1250.setObjectName(u"pushButton_cup1250")
         self.pushButton_cup1250.setGeometry(QRect(124, 157, 71, 31))
-        self.pushButton_cup1250.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_cup1250.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_cup1250.setIcon(icon3)
         self.pushButton_cup12000 = QPushButton(self.frame_3)
         self.pushButton_cup12000.setObjectName(u"pushButton_cup12000")
         self.pushButton_cup12000.setGeometry(QRect(124, 216, 71, 31))
-        self.pushButton_cup12000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_cup12000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_cup12000.setIcon(icon3)
         self.pushButton_cup50000 = QPushButton(self.frame_3)
         self.pushButton_cup50000.setObjectName(u"pushButton_cup50000")
         self.pushButton_cup50000.setGeometry(QRect(124, 279, 71, 31))
-        self.pushButton_cup50000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_cup50000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_cup50000.setIcon(icon3)
+        self.line_3 = QFrame(self.frame_3)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setGeometry(QRect(10, 134, 200, 2))
+        self.line_3.setStyleSheet(u"background-color: rgb(213, 213, 213);")
+        self.line_3.setFrameShape(QFrame.Shape.HLine)
+        self.line_3.setFrameShadow(QFrame.Shadow.Sunken)
+        self.line_4 = QFrame(self.frame_3)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setGeometry(QRect(10, 202, 200, 2))
+        self.line_4.setStyleSheet(u"background-color: rgb(213, 213, 213);")
+        self.line_4.setFrameShape(QFrame.Shape.HLine)
+        self.line_4.setFrameShadow(QFrame.Shadow.Sunken)
+        self.line_5 = QFrame(self.frame_3)
+        self.line_5.setObjectName(u"line_5")
+        self.line_5.setGeometry(QRect(10, 262, 200, 2))
+        self.line_5.setStyleSheet(u"background-color: rgb(213, 213, 213);")
+        self.line_5.setFrameShape(QFrame.Shape.HLine)
+        self.line_5.setFrameShadow(QFrame.Shadow.Sunken)
         self.frame_5 = QFrame(self.page)
         self.frame_5.setObjectName(u"frame_5")
         self.frame_5.setGeometry(QRect(620, 100, 221, 281))
@@ -280,18 +336,6 @@ class Ui_MainWindow(object):
         self.label_19.setObjectName(u"label_19")
         self.label_19.setGeometry(QRect(20, 100, 131, 16))
         self.label_19.setStyleSheet(u"color: rgb(166, 166, 166);")
-        self.line_7 = QFrame(self.frame_5)
-        self.line_7.setObjectName(u"line_7")
-        self.line_7.setGeometry(QRect(10, 130, 200, 2))
-        self.line_7.setStyleSheet(u"background-color: rgb(213, 213, 213);")
-        self.line_7.setFrameShape(QFrame.Shape.HLine)
-        self.line_7.setFrameShadow(QFrame.Shadow.Sunken)
-        self.line_8 = QFrame(self.frame_5)
-        self.line_8.setObjectName(u"line_8")
-        self.line_8.setGeometry(QRect(10, 200, 200, 1))
-        self.line_8.setStyleSheet(u"background-color: rgb(213, 213, 213);")
-        self.line_8.setFrameShape(QFrame.Shape.HLine)
-        self.line_8.setFrameShadow(QFrame.Shadow.Sunken)
         self.label_20 = QLabel(self.frame_5)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setGeometry(QRect(20, 140, 121, 21))
@@ -308,6 +352,24 @@ class Ui_MainWindow(object):
         self.label_23.setObjectName(u"label_23")
         self.label_23.setGeometry(QRect(20, 240, 161, 16))
         self.label_23.setStyleSheet(u"color: rgb(166, 166, 166);")
+        self.line_6 = QFrame(self.frame_5)
+        self.line_6.setObjectName(u"line_6")
+        self.line_6.setGeometry(QRect(10, 129, 200, 2))
+        self.line_6.setStyleSheet(u"background-color: rgb(213, 213, 213);")
+        self.line_6.setFrameShape(QFrame.Shape.HLine)
+        self.line_6.setFrameShadow(QFrame.Shadow.Sunken)
+        self.line_7 = QFrame(self.frame_5)
+        self.line_7.setObjectName(u"line_7")
+        self.line_7.setGeometry(QRect(10, 200, 200, 2))
+        self.line_7.setStyleSheet(u"background-color: rgb(213, 213, 213);")
+        self.line_7.setFrameShape(QFrame.Shape.HLine)
+        self.line_7.setFrameShadow(QFrame.Shadow.Sunken)
+        self.line_8 = QFrame(self.frame_5)
+        self.line_8.setObjectName(u"line_8")
+        self.line_8.setGeometry(QRect(10, 59, 200, 2))
+        self.line_8.setStyleSheet(u"background-color: rgb(213, 213, 213);")
+        self.line_8.setFrameShape(QFrame.Shape.HLine)
+        self.line_8.setFrameShadow(QFrame.Shadow.Sunken)
         self.label_uluch = QLabel(self.page)
         self.label_uluch.setObjectName(u"label_uluch")
         self.label_uluch.setGeometry(QRect(20, 80, 101, 16))
@@ -320,24 +382,6 @@ class Ui_MainWindow(object):
         self.label_dostij.setGeometry(QRect(630, 80, 101, 16))
         self.label_dostij.setFont(font5)
         self.label_dostij.setStyleSheet(u"color: rgb(103, 255, 255);")
-        self.line_3 = QFrame(self.page)
-        self.line_3.setObjectName(u"line_3")
-        self.line_3.setGeometry(QRect(11, 240, 200, 1))
-        self.line_3.setStyleSheet(u"background-color: rgb(213, 213, 213);")
-        self.line_3.setFrameShape(QFrame.Shape.HLine)
-        self.line_3.setFrameShadow(QFrame.Shadow.Sunken)
-        self.line_5 = QFrame(self.page)
-        self.line_5.setObjectName(u"line_5")
-        self.line_5.setGeometry(QRect(18, 359, 200, 2))
-        self.line_5.setStyleSheet(u"background-color: rgb(213, 213, 213);;")
-        self.line_5.setFrameShape(QFrame.Shape.HLine)
-        self.line_5.setFrameShadow(QFrame.Shadow.Sunken)
-        self.line_6 = QFrame(self.page)
-        self.line_6.setObjectName(u"line_6")
-        self.line_6.setGeometry(QRect(631, 159, 200, 2))
-        self.line_6.setStyleSheet(u"background-color: rgb(213, 213, 213);")
-        self.line_6.setFrameShape(QFrame.Shape.HLine)
-        self.line_6.setFrameShadow(QFrame.Shadow.Sunken)
         self.stackedWidget.addWidget(self.page)
         self.page_5 = QWidget()
         self.page_5.setObjectName(u"page_5")
@@ -354,12 +398,14 @@ class Ui_MainWindow(object):
         self.label_im_pol = QLabel(self.frame_6)
         self.label_im_pol.setObjectName(u"label_im_pol")
         self.label_im_pol.setGeometry(QRect(10, 80, 291, 16))
+        self.label_im_pol.setWordWrap(True)
         self.label_3 = QLabel(self.frame_6)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(140, 120, 71, 16))
         self.label_o_sebe = QLabel(self.frame_6)
         self.label_o_sebe.setObjectName(u"label_o_sebe")
         self.label_o_sebe.setGeometry(QRect(10, 160, 291, 16))
+        self.label_o_sebe.setWordWrap(True)
         self.frame_18 = QFrame(self.frame_6)
         self.frame_18.setObjectName(u"frame_18")
         self.frame_18.setGeometry(QRect(10, 190, 291, 191))
@@ -400,9 +446,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_2000 = QPushButton(self.frame_7)
         self.pushButton_m_2000.setObjectName(u"pushButton_m_2000")
         self.pushButton_m_2000.setGeometry(QRect(50, 70, 71, 31))
-        self.pushButton_m_2000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_2000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_2000.setIcon(icon3)
         self.label_31 = QLabel(self.frame_7)
         self.label_31.setObjectName(u"label_31")
@@ -422,9 +476,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_4000 = QPushButton(self.frame_8)
         self.pushButton_m_4000.setObjectName(u"pushButton_m_4000")
         self.pushButton_m_4000.setGeometry(QRect(50, 70, 71, 31))
-        self.pushButton_m_4000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_4000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_4000.setIcon(icon3)
         self.label_33 = QLabel(self.frame_8)
         self.label_33.setObjectName(u"label_33")
@@ -444,9 +506,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_6000 = QPushButton(self.frame_9)
         self.pushButton_m_6000.setObjectName(u"pushButton_m_6000")
         self.pushButton_m_6000.setGeometry(QRect(50, 70, 71, 31))
-        self.pushButton_m_6000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_6000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_6000.setIcon(icon3)
         self.label_35 = QLabel(self.frame_9)
         self.label_35.setObjectName(u"label_35")
@@ -466,9 +536,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_8000 = QPushButton(self.frame_10)
         self.pushButton_m_8000.setObjectName(u"pushButton_m_8000")
         self.pushButton_m_8000.setGeometry(QRect(50, 70, 71, 31))
-        self.pushButton_m_8000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_8000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_8000.setIcon(icon3)
         self.label_37 = QLabel(self.frame_10)
         self.label_37.setObjectName(u"label_37")
@@ -488,9 +566,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_10000 = QPushButton(self.frame_11)
         self.pushButton_m_10000.setObjectName(u"pushButton_m_10000")
         self.pushButton_m_10000.setGeometry(QRect(50, 70, 71, 31))
-        self.pushButton_m_10000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_10000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_10000.setIcon(icon3)
         self.label_39 = QLabel(self.frame_11)
         self.label_39.setObjectName(u"label_39")
@@ -510,9 +596,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_12000 = QPushButton(self.frame_12)
         self.pushButton_m_12000.setObjectName(u"pushButton_m_12000")
         self.pushButton_m_12000.setGeometry(QRect(50, 70, 71, 31))
-        self.pushButton_m_12000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_12000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_12000.setIcon(icon3)
         self.label_41 = QLabel(self.frame_12)
         self.label_41.setObjectName(u"label_41")
@@ -532,9 +626,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_14000 = QPushButton(self.frame_13)
         self.pushButton_m_14000.setObjectName(u"pushButton_m_14000")
         self.pushButton_m_14000.setGeometry(QRect(50, 70, 71, 31))
-        self.pushButton_m_14000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_14000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_14000.setIcon(icon3)
         self.label_43 = QLabel(self.frame_13)
         self.label_43.setObjectName(u"label_43")
@@ -554,9 +656,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_16000 = QPushButton(self.frame_14)
         self.pushButton_m_16000.setObjectName(u"pushButton_m_16000")
         self.pushButton_m_16000.setGeometry(QRect(50, 70, 71, 31))
-        self.pushButton_m_16000.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_16000.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_16000.setIcon(icon3)
         self.label_45 = QLabel(self.frame_14)
         self.label_45.setObjectName(u"label_45")
@@ -576,9 +686,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_u = QPushButton(self.frame_15)
         self.pushButton_m_u.setObjectName(u"pushButton_m_u")
         self.pushButton_m_u.setGeometry(QRect(70, 120, 71, 31))
-        self.pushButton_m_u.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_u.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         icon4 = QIcon()
         icon4.addFile(u"../../../../../Users/User/Downloads/free-icon-coin-1667808.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton_m_u.setIcon(icon4)
@@ -601,9 +719,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_g = QPushButton(self.frame_16)
         self.pushButton_m_g.setObjectName(u"pushButton_m_g")
         self.pushButton_m_g.setGeometry(QRect(70, 120, 71, 31))
-        self.pushButton_m_g.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_g.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_g.setIcon(icon4)
         self.label_49 = QLabel(self.frame_16)
         self.label_49.setObjectName(u"label_49")
@@ -624,9 +750,17 @@ class Ui_MainWindow(object):
         self.pushButton_m_s = QPushButton(self.frame_17)
         self.pushButton_m_s.setObjectName(u"pushButton_m_s")
         self.pushButton_m_s.setGeometry(QRect(70, 120, 71, 31))
-        self.pushButton_m_s.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_m_s.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.pushButton_m_s.setIcon(icon4)
         self.label_51 = QLabel(self.frame_17)
         self.label_51.setObjectName(u"label_51")
@@ -676,9 +810,17 @@ class Ui_MainWindow(object):
         self.pushButton_cup_126 = QPushButton(self.page_2)
         self.pushButton_cup_126.setObjectName(u"pushButton_cup_126")
         self.pushButton_cup_126.setGeometry(QRect(500, 340, 141, 51))
-        self.pushButton_cup_126.setStyleSheet(u"background-color: rgb(87, 198, 36);\n"
+        self.pushButton_cup_126.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(87, 198, 36);\n"
 "color: rgb(255, 255, 255);\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"padding: 0px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"padding-top: 2px;     \n"
+"padding-left: 2px;\n"
+"background-color: rgb(66, 149, 27);\n"
+"}")
         self.stackedWidget.addWidget(self.page_2)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -714,9 +856,9 @@ class Ui_MainWindow(object):
         self.label_pl1000.setText(QCoreApplication.translate("MainWindow", u"+1000 \u043a \u043a\u043b\u0438\u043a\u0443", None))
         self.pushButton_cup_125.setText(QCoreApplication.translate("MainWindow", u"125", None))
         self.pushButton_cup450.setText(QCoreApplication.translate("MainWindow", u"450", None))
-        self.pushButton_cup1250.setText(QCoreApplication.translate("MainWindow", u"1 250", None))
-        self.pushButton_cup12000.setText(QCoreApplication.translate("MainWindow", u"12 000", None))
-        self.pushButton_cup50000.setText(QCoreApplication.translate("MainWindow", u"50 000", None))
+        self.pushButton_cup1250.setText(QCoreApplication.translate("MainWindow", u"1250", None))
+        self.pushButton_cup12000.setText(QCoreApplication.translate("MainWindow", u"12000", None))
+        self.pushButton_cup50000.setText(QCoreApplication.translate("MainWindow", u"50000", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0432\u044b\u0439 \u043a\u043b\u0438\u043a", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0434\u0435\u043b\u0430\u0439 1 \u043a\u043b\u0438\u043a", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"\u041b\u044e\u0431\u0438\u0442\u0435\u043b\u044c \u043c\u043e\u043d\u0435\u0442", None))
@@ -745,16 +887,16 @@ class Ui_MainWindow(object):
         self.pushButton_m_8000.setText(QCoreApplication.translate("MainWindow", u"8000", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"\u0411\u043e\u043d\u0443\u0441 \u043a \u043a\u043b\u0438\u043a\u0443", None))
         self.label_38.setText(QCoreApplication.translate("MainWindow", u"+ 2X", None))
-        self.pushButton_m_10000.setText(QCoreApplication.translate("MainWindow", u"10 000", None))
+        self.pushButton_m_10000.setText(QCoreApplication.translate("MainWindow", u"10000", None))
         self.label_39.setText(QCoreApplication.translate("MainWindow", u"\u0411\u043e\u043d\u0443\u0441 \u043a \u043a\u043b\u0438\u043a\u0443", None))
         self.label_40.setText(QCoreApplication.translate("MainWindow", u"+ 2.5X", None))
-        self.pushButton_m_12000.setText(QCoreApplication.translate("MainWindow", u"12 000", None))
+        self.pushButton_m_12000.setText(QCoreApplication.translate("MainWindow", u"12000", None))
         self.label_41.setText(QCoreApplication.translate("MainWindow", u"\u0411\u043e\u043d\u0443\u0441 \u043a \u043a\u043b\u0438\u043a\u0443", None))
         self.label_42.setText(QCoreApplication.translate("MainWindow", u"+ 3X", None))
-        self.pushButton_m_14000.setText(QCoreApplication.translate("MainWindow", u"14 000", None))
+        self.pushButton_m_14000.setText(QCoreApplication.translate("MainWindow", u"14000", None))
         self.label_43.setText(QCoreApplication.translate("MainWindow", u"\u0411\u043e\u043d\u0443\u0441 \u043a \u043a\u043b\u0438\u043a\u0443", None))
         self.label_44.setText(QCoreApplication.translate("MainWindow", u"+ 3.5X", None))
-        self.pushButton_m_16000.setText(QCoreApplication.translate("MainWindow", u"16 000", None))
+        self.pushButton_m_16000.setText(QCoreApplication.translate("MainWindow", u"16000", None))
         self.label_45.setText(QCoreApplication.translate("MainWindow", u"\u0411\u043e\u043d\u0443\u0441 \u043a \u043a\u043b\u0438\u043a\u0443", None))
         self.label_46.setText(QCoreApplication.translate("MainWindow", u"+ 4X", None))
         self.pushButton_m_u.setText(QCoreApplication.translate("MainWindow", u"5000", None))
@@ -771,3 +913,4 @@ class Ui_MainWindow(object):
         self.label_54.setText(QCoreApplication.translate("MainWindow", u"\u041e \u0441\u0435\u0431\u0435", None))
         self.pushButton_cup_126.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0438\u0442\u044c", None))
     # retranslateUi
+
