@@ -23,7 +23,22 @@ class MainWindow(QMainWindow):
 
         self.setting = QSettings("Clicer", "magaz")
 
+        if not os.path.exists("dosti.json"):
+               self.dos = {
+                      "u" : False,
+                      "g" : False,
+                      "s" : False
+               }
+               with open("dosti.json","w",encoding="utf-8") as f:
+                      json.dump(self.dos,f,ensure_ascii=False,indent=4)
+        else:
+               with open("dosti.json","r",encoding="utf-8") as f:
+                      self.dos = json.load(f)
 
+
+
+
+               
         if not os.path.exists("dann.json"):
             self.ui.stackedWidget.setCurrentIndex(3)
 
@@ -34,7 +49,7 @@ class MainWindow(QMainWindow):
                            "clici" : 0,
                            "za clic" : 1.0,
                            "bonus" : 1.0,           
-                             }
+                             }                            #тут плохо
         else:
             self.ui.stackedWidget.setCurrentIndex(0)
 
@@ -72,6 +87,14 @@ class MainWindow(QMainWindow):
         self.saved = self.setting.value("items", "")
         if self.saved:
                self.items.update(json.loads(self.saved))
+
+
+        if self.dos["u"]:
+               pass
+        if self.dos["g"]:
+                pass
+        if self.dos["s"]:
+                pass
 
 
 
@@ -486,6 +509,10 @@ class MainWindow(QMainWindow):
                  background-color: rgb(126, 125, 126);
                }
                """)
+
+               self.s_u()
+
+
         else:
               self.ui.pushButton_m_u.setEnabled(True)
               self.ui.pushButton_m_u.setStyleSheet("""
@@ -517,6 +544,8 @@ class MainWindow(QMainWindow):
                  background-color: rgb(126, 125, 126);
                }
                """)
+
+               self.s_g()
         else:
               self.ui.pushButton_m_g.setEnabled(True)
               self.ui.pushButton_m_g.setStyleSheet("""
@@ -547,6 +576,8 @@ class MainWindow(QMainWindow):
                  background-color: rgb(126, 125, 126);
                }
                """)
+
+               self.s_s()
         else:
               self.ui.pushButton_m_s.setEnabled(True)
               self.ui.pushButton_m_s.setStyleSheet("""
@@ -1069,6 +1100,8 @@ class MainWindow(QMainWindow):
                     self.setting.setValue("enabled", self.ui.pushButton_m_g.isEnabled())
                                                           
                     self.setting.setValue("items", json.dumps(self.items))
+
+                    self.dos["g"] == True
     
                     
     def m_s(self):
@@ -1101,6 +1134,8 @@ class MainWindow(QMainWindow):
                     self.setting.setValue("enabled", self.ui.pushButton_m_s.isEnabled())
                                                           
                     self.setting.setValue("items", json.dumps(self.items))
+
+                    self.dos["s"] == True
     
                     
 
@@ -1179,6 +1214,8 @@ class MainWindow(QMainWindow):
                   print(3)
                   self.u.setAttribute(Qt.WA_TransparentForMouseEvents)
                   self.u.show()
+
+                  self.dos["u"] == True
                   print(4)
            if self.z >= 1000:
                   pass
