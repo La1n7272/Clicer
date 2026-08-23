@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="images">
+    <file>icons8.png</file>
     <file>images/free-icon-bitcoin-1490900.png</file>
     <file>images/free-icon-coin-1667808.png</file>
     <file>images/free-icon-home-1946488.png</file>

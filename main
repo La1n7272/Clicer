@@ -1151,13 +1151,41 @@ class MainWindow(QMainWindow):
 
          self.n = self.s + self.c
 
+         self.z = self.q["monet"] + self.n
+
          self.ui.label_gl_balance.setText(str(self.n))
 
          self.k = int(self.ui.label_gl_clici.text())
 
          self.k += 1
 
-         self.ui.label_gl_clici.setText(str(self.k))        
+         self.clics = int(self.ui.label_gl_clici.text())
+
+         #self.q["clici"] = self.k
+
+         self.ui.label_gl_clici.setText(str(self.k))
+
+         self.dos()
+
+    def dos(self):
+           if self.clics >= 1:
+                  print(1)
+                  self.pa = self.ui.stackedWidget.widget(0)
+                  self.u = QLabel("",self.pa)
+                  self.u.setPixmap(QPixmap(":/images/icons8.png"))
+                  print(2)
+                  self.u.setScaledContents(True)
+                  self.u.setGeometry(140,16,31,31)
+                  print(3)
+                  self.u.setAttribute(Qt.WA_TransparentForMouseEvents)
+                  self.u.show()
+                  print(4)
+           if self.z >= 1000:
+                  pass
+           if self.q["clici"] >= 10000:
+                  pass
+           if self.z >= 1000000000:
+                  pass        
 
     def finish(self):
             self.ui.stackedWidget.setCurrentIndex(0)
