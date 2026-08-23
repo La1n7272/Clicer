@@ -11,7 +11,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
 import sys
 import os
 import json
-
+import resources_rc
 from designer import Ui_MainWindow
 
 class MainWindow(QMainWindow):
@@ -22,6 +22,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         self.setting = QSettings("Clicer", "magaz")
+
 
         if not os.path.exists("dann.json"):
             self.ui.stackedWidget.setCurrentIndex(3)
@@ -1013,7 +1014,7 @@ class MainWindow(QMainWindow):
            if self.balance >= self.prise:
                 self.new_balance = self.balance - self.prise
                 self.ui.label_gl_balance.setText(str(self.new_balance))
-                self.s_u
+                self.s_u()
 
                 self.items["u"] == True
 
@@ -1044,7 +1045,7 @@ class MainWindow(QMainWindow):
                if self.balance >= self.prise:
                     self.new_balance = self.balance - self.prise
                     self.ui.label_gl_balance.setText(str(self.new_balance))
-                    self.s_g
+                    self.s_g()
 
                     self.items["g"] == True
 
@@ -1076,7 +1077,7 @@ class MainWindow(QMainWindow):
                if self.balance >= self.prise:
                     self.new_balance = self.balance - self.prise
                     self.ui.label_gl_balance.setText(str(self.new_balance))
-                    self.s_s
+                    self.s_s()
 
                     self.items["s"] == True
 
@@ -1104,22 +1105,31 @@ class MainWindow(QMainWindow):
                     
 
     def s_u(self):
-           self.utca = QLabel("",self)
-           self.utca.setPixmap(r":/images/pngwing.com.png")
+           self.page = self.ui.stackedWidget.widget(1)
+           self.utca = QLabel("",self.page)
+           self.utca.setPixmap(QPixmap(":/images/images/pngwing.com.png"))
            self.utca.setScaledContents(True)
            self.utca.setGeometry(10,40,251,471)
+           self.utca.setAttribute(Qt.WA_TransparentForMouseEvents)
+           self.utca.show()
 
     def s_g(self):
-           self.utc = QLabel("",self)
-           self.utc.setPixmap(r":/images/pngwing.com (1).png")
+           self.page = self.ui.stackedWidget.widget(1)
+           self.utc = QLabel("",self.page)
+           self.utc.setPixmap(QPixmap(":/images/images/pngwing.com (1).png"))
            self.utc.setScaledContents(True)
-           self.utca.setGeometry(270,180,301,331)
+           self.utc.setGeometry(360,410,81,111)
+           self.utc.setAttribute(Qt.WA_TransparentForMouseEvents)
+           self.utc.show()
 
     def s_s(self):
-           self.ut = QLabel("",self)
-           self.ut.setPixmap(r":/images/pngwing.com (2).png")
+           self.page = self.ui.stackedWidget.widget(1)
+           self.ut = QLabel("",self.page)
+           self.ut.setPixmap(QPixmap(":/images/images/pngwing.com (2).png"))
            self.ut.setScaledContents(True)
-           self.utca.setGeometry(570,0,251,521)
+           self.ut.setGeometry(570,0,251,521)
+           self.ut.setAttribute(Qt.WA_TransparentForMouseEvents)
+           self.ut.show()
                 
     
 
