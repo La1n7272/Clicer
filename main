@@ -25,9 +25,10 @@ class MainWindow(QMainWindow):
 
         if not os.path.exists("dosti.json"):
                self.dos = {
-                      "u" : False,
-                      "g" : False,
-                      "s" : False
+                      "1_clic" : False,
+                      "1000_monet" : False,
+                      "10000_clic" : False,
+                      "1000000000_monet" : False
                }
                with open("dosti.json","w",encoding="utf-8") as f:
                       json.dump(self.dos,f,ensure_ascii=False,indent=4)
@@ -89,11 +90,13 @@ class MainWindow(QMainWindow):
                self.items.update(json.loads(self.saved))
 
 
-        if self.dos["u"]:
+        if self.dos["1_clic"]:   #сюда дописать появление галочки
                pass
-        if self.dos["g"]:
+        if self.dos["1000_monet"]:
                 pass
-        if self.dos["s"]:
+        if self.dos["10000_clic"]:
+                pass
+        if self.dos["1000000000_monet"]:
                 pass
 
 
@@ -683,7 +686,6 @@ class MainWindow(QMainWindow):
                          """)
                   self.setting = QSettings("Clicer", "magaz")
                   
-                  self.setting.setValue("button_color", "rgb(165, 165, 165)")
                   self.setting.setValue("enabled", self.ui.pushButton_cup450.isEnabled())
                   
                   self.setting.setValue("items", json.dumps(self.items))
@@ -715,8 +717,6 @@ class MainWindow(QMainWindow):
                               """)
                   self.setting = QSettings("Clicer", "magaz")
                                     
-                  self.setting.setValue("button_color", "rgb(165, 165, 165)")
-                  self.setting.setValue("enabled", self.ui.pushButton_cup1250.isEnabled())
                                     
                   self.setting.setValue("items", json.dumps(self.items))
     def cup_12000(self):
@@ -747,8 +747,6 @@ class MainWindow(QMainWindow):
                                            """)
                   self.setting = QSettings("Clicer", "magaz")
                                     
-                  self.setting.setValue("button_color", "rgb(165, 165, 165)")
-                  self.setting.setValue("enabled", self.ui.pushButton_cup12000.isEnabled())
                                     
                   self.setting.setValue("items", json.dumps(self.items))
     def cup_50000(self):
@@ -779,7 +777,6 @@ class MainWindow(QMainWindow):
                                            """)
                   self.setting = QSettings("Clicer", "magaz")
                                     
-                  self.setting.setValue("button_color", "rgb(165, 165, 165)")
                   self.setting.setValue("enabled", self.ui.pushButton_cup50000.isEnabled())
                                     
                   self.setting.setValue("items", json.dumps(self.items))
@@ -811,7 +808,6 @@ class MainWindow(QMainWindow):
                                            """)
                   self.setting = QSettings("Clicer", "magaz")
                                     
-                  self.setting.setValue("button_color", "rgb(165, 165, 165)")
                   self.setting.setValue("enabled", self.ui.pushButton_m_2000.isEnabled())
                                     
                   self.setting.setValue("items", json.dumps(self.items))
@@ -842,7 +838,7 @@ class MainWindow(QMainWindow):
                                                                  """)
                       self.setting = QSettings("Clicer", "magaz")
                                                           
-                      self.setting.setValue("button_color", "rgb(165, 165, 165)")
+  
                       self.setting.setValue("enabled", self.ui.pushButton_m_4000.isEnabled())
                                                           
                       self.setting.setValue("items", json.dumps(self.items))
@@ -875,7 +871,7 @@ class MainWindow(QMainWindow):
                                                                  """)
                       self.setting = QSettings("Clicer", "magaz")
                                                           
-                      self.setting.setValue("button_color", "rgb(165, 165, 165)")
+  
                       self.setting.setValue("enabled", self.ui.pushButton_m_6000.isEnabled())
                                                           
                       self.setting.setValue("items", json.dumps(self.items))
@@ -907,7 +903,7 @@ class MainWindow(QMainWindow):
                                                                  """)
                       self.setting = QSettings("Clicer", "magaz")
                                                           
-                      self.setting.setValue("button_color", "rgb(165, 165, 165)")
+  
                       self.setting.setValue("enabled", self.ui.pushButton_m_8000.isEnabled())
                                                           
                       self.setting.setValue("items", json.dumps(self.items))
@@ -939,7 +935,7 @@ class MainWindow(QMainWindow):
                                                                  """)
                       self.setting = QSettings("Clicer", "magaz")
                                                           
-                      self.setting.setValue("button_color", "rgb(165, 165, 165)")
+  
                       self.setting.setValue("enabled", self.ui.pushButton_m_10000.isEnabled())
                                                           
                       self.setting.setValue("items", json.dumps(self.items))
@@ -971,7 +967,7 @@ class MainWindow(QMainWindow):
                                                                  """)
                       self.setting = QSettings("Clicer", "magaz")
                                                           
-                      self.setting.setValue("button_color", "rgb(165, 165, 165)")
+  
                       self.setting.setValue("enabled", self.ui.pushButton_m_12000.isEnabled())
                                                           
                       self.setting.setValue("items", json.dumps(self.items))
@@ -1003,7 +999,7 @@ class MainWindow(QMainWindow):
                                                                  """)
                       self.setting = QSettings("Clicer", "magaz")
                                                           
-                      self.setting.setValue("button_color", "rgb(165, 165, 165)")
+  
                       self.setting.setValue("enabled", self.ui.pushButton_m_14000.isEnabled())
                                                           
                       self.setting.setValue("items", json.dumps(self.items))
@@ -1033,10 +1029,7 @@ class MainWindow(QMainWindow):
                  background-color: rgb(126, 125, 126);
                }
                                                                  """)
-                      self.setting = QSettings("Clicer", "magaz")
-                                                          
-                      self.setting.setValue("button_color", "rgb(165, 165, 165)")
-                      self.setting.setValue("enabled", self.ui.pushButton_m_16000.isEnabled())
+                      self.setting = QSettings("Clicer", "magaz")                                                          
                                                           
                       self.setting.setValue("items", json.dumps(self.items))
     def m_u(self):
@@ -1064,9 +1057,6 @@ class MainWindow(QMainWindow):
                }
                                                                  """)
                 self.setting = QSettings("Clicer", "magaz")
-                                                          
-                self.setting.setValue("button_color", "rgb(165, 165, 165)")
-                self.setting.setValue("enabled", self.ui.pushButton_m_u.isEnabled())
                                                           
                 self.setting.setValue("items", json.dumps(self.items))
 
@@ -1096,14 +1086,8 @@ class MainWindow(QMainWindow):
                                                                  """)
                     self.setting = QSettings("Clicer", "magaz")
                                                           
-                    self.setting.setValue("button_color", "rgb(165, 165, 165)")
-                    self.setting.setValue("enabled", self.ui.pushButton_m_g.isEnabled())
-                                                          
                     self.setting.setValue("items", json.dumps(self.items))
-
-                    self.dos["g"] == True
-    
-                    
+            
     def m_s(self):
                self.balance =  float(self.ui.label_gl_balance.text())
                self.prise = float(self.ui.pushButton_m_s.text())
@@ -1130,14 +1114,10 @@ class MainWindow(QMainWindow):
                                                                  """)
                     self.setting = QSettings("Clicer", "magaz")
                                                           
-                    self.setting.setValue("button_color", "rgb(165, 165, 165)")
+
                     self.setting.setValue("enabled", self.ui.pushButton_m_s.isEnabled())
                                                           
                     self.setting.setValue("items", json.dumps(self.items))
-
-                    self.dos["s"] == True
-    
-                    
 
     def s_u(self):
            self.page = self.ui.stackedWidget.widget(1)
@@ -1186,7 +1166,7 @@ class MainWindow(QMainWindow):
 
          self.n = self.s + self.c
 
-         self.z = self.q["monet"] + self.n
+         self.q["monet"] + self.n
 
          self.ui.label_gl_balance.setText(str(self.n))
 
@@ -1194,35 +1174,49 @@ class MainWindow(QMainWindow):
 
          self.k += 1
 
-         self.clics = int(self.ui.label_gl_clici.text())
-
-         #self.q["clici"] = self.k
+         self.clics = self.k
 
          self.ui.label_gl_clici.setText(str(self.k))
 
-         self.dos()
+         self.do()
 
-    def dos(self):
+    def do(self):
            if self.clics >= 1:
-                  print(1)
-                  self.pa = self.ui.stackedWidget.widget(0)
-                  self.u = QLabel("",self.pa)
-                  self.u.setPixmap(QPixmap(":/images/icons8.png"))
-                  print(2)
-                  self.u.setScaledContents(True)
-                  self.u.setGeometry(140,16,31,31)
-                  print(3)
-                  self.u.setAttribute(Qt.WA_TransparentForMouseEvents)
-                  self.u.show()
-
-                  self.dos["u"] == True
-                  print(4)
-           if self.z >= 1000:
-                  pass
-           if self.q["clici"] >= 10000:
-                  pass
-           if self.z >= 1000000000:
-                  pass        
+                  self.pa = self.ui.frame_5
+                  self.one_dos = QLabel("",self.pa)
+                  self.one_dos.setPixmap(QPixmap(":/images/icons8.png"))
+                  self.one_dos.setScaledContents(True)
+                  self.one_dos.setGeometry(143,15,31,31)
+                  self.one_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
+                  self.one_dos.show()
+                  self.dos["1_clic"] == True
+           if self.n >= 1000:
+                  self.pa = self.ui.frame_5
+                  self.two_dos = QLabel("",self.pa)
+                  self.two_dos.setPixmap(QPixmap(":/images/icons8.png"))
+                  self.two_dos.setScaledContents(True)
+                  self.two_dos.setGeometry(153,78,31,31)
+                  self.two_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
+                  self.two_dos.show()
+                  self.dos["1000_monet"] == True
+           if self.clics >= 10000:
+                  self.pa = self.ui.frame_5
+                  self.tree_dos = QLabel("",self.pa)
+                  self.tree_dos.setPixmap(QPixmap(":/images/icons8.png"))
+                  self.tree_dos.setScaledContents(True)
+                  self.tree_dos.setGeometry(153,150,31,31)
+                  self.tree_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
+                  self.tree_dos.show()
+                  self.dos["10000_clic"] == True
+           if self.n >= 1000000000:
+                  self.pa = self.ui.frame_5
+                  self.four_dos = QLabel("",self.pa)
+                  self.four_dos.setPixmap(QPixmap(":/images/icons8.png"))
+                  self.four_dos.setScaledContents(True)
+                  self.four_dos.setGeometry(180,218,31,31)
+                  self.four_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
+                  self.four_dos.show()
+                  self.dos["1000000000_monet"] == True        
 
     def finish(self):
             self.ui.stackedWidget.setCurrentIndex(0)
