@@ -42,15 +42,6 @@ class MainWindow(QMainWindow):
                
         if not os.path.exists("dann.json"):
             self.ui.stackedWidget.setCurrentIndex(3)
-
-            self.q = {
-                           "name" : self.ui.lineEdit_im_pol.text(),
-                           "o sebe" : self.ui.lineEdit_o_sebe.text(),
-                           "monet" : 0,
-                           "clici" : 0,
-                           "za clic" : 1.0,
-                           "bonus" : 1.0,           
-                             }                            #тут плохо
         else:
             self.ui.stackedWidget.setCurrentIndex(0)
 
@@ -90,14 +81,42 @@ class MainWindow(QMainWindow):
                self.items.update(json.loads(self.saved))
 
 
-        if self.dos["1_clic"]:   #сюда дописать появление галочки
-               pass
+        if self.dos["1_clic"]:   
+               self.pa = self.ui.frame_5
+               self.one_dos = QLabel("",self.pa)
+               self.one_dos.setPixmap(QPixmap(":/images/icons8.png"))
+               self.one_dos.setScaledContents(True)
+               self.one_dos.setGeometry(143,15,31,31)
+               self.one_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
+               self.one_dos.show()
+               self.dos["1_clic"] == True
         if self.dos["1000_monet"]:
-                pass
+                  self.pa = self.ui.frame_5
+                  self.two_dos = QLabel("",self.pa)
+                  self.two_dos.setPixmap(QPixmap(":/images/icons8.png"))
+                  self.two_dos.setScaledContents(True)
+                  self.two_dos.setGeometry(153,78,31,31)
+                  self.two_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
+                  self.two_dos.show()
+                  self.dos["1000_monet"] == True
         if self.dos["10000_clic"]:
-                pass
+                  self.pa = self.ui.frame_5
+                  self.tree_dos = QLabel("",self.pa)
+                  self.tree_dos.setPixmap(QPixmap(":/images/icons8.png"))
+                  self.tree_dos.setScaledContents(True)
+                  self.tree_dos.setGeometry(153,150,31,31)
+                  self.tree_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
+                  self.tree_dos.show()
+                  self.dos["10000_clic"] == True
         if self.dos["1000000000_monet"]:
-                pass
+                  self.pa = self.ui.frame_5
+                  self.four_dos = QLabel("",self.pa)
+                  self.four_dos.setPixmap(QPixmap(":/images/icons8.png"))
+                  self.four_dos.setScaledContents(True)
+                  self.four_dos.setGeometry(180,218,31,31)
+                  self.four_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
+                  self.four_dos.show()
+                  self.dos["1000000000_monet"] == True
 
 
 
@@ -1170,7 +1189,7 @@ class MainWindow(QMainWindow):
 
          self.ui.label_gl_balance.setText(str(self.n))
 
-         self.k = int(self.ui.label_gl_clici.text())
+         self.k = float(self.ui.label_gl_clici.text())
 
          self.k += 1
 
@@ -1189,7 +1208,7 @@ class MainWindow(QMainWindow):
                   self.one_dos.setGeometry(143,15,31,31)
                   self.one_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
                   self.one_dos.show()
-                  self.dos["1_clic"] == True
+                  self.dos["1_clic"] = True
            if self.n >= 1000:
                   self.pa = self.ui.frame_5
                   self.two_dos = QLabel("",self.pa)
@@ -1198,7 +1217,7 @@ class MainWindow(QMainWindow):
                   self.two_dos.setGeometry(153,78,31,31)
                   self.two_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
                   self.two_dos.show()
-                  self.dos["1000_monet"] == True
+                  self.dos["1000_monet"] = True
            if self.clics >= 10000:
                   self.pa = self.ui.frame_5
                   self.tree_dos = QLabel("",self.pa)
@@ -1207,7 +1226,7 @@ class MainWindow(QMainWindow):
                   self.tree_dos.setGeometry(153,150,31,31)
                   self.tree_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
                   self.tree_dos.show()
-                  self.dos["10000_clic"] == True
+                  self.dos["10000_clic"] = True
            if self.n >= 1000000000:
                   self.pa = self.ui.frame_5
                   self.four_dos = QLabel("",self.pa)
@@ -1216,24 +1235,33 @@ class MainWindow(QMainWindow):
                   self.four_dos.setGeometry(180,218,31,31)
                   self.four_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
                   self.four_dos.show()
-                  self.dos["1000000000_monet"] == True        
+                  self.dos["1000000000_monet"] = True        
 
     def finish(self):
+            self.q = {
+                "name" : self.ui.lineEdit_im_pol.text(),
+                "o sebe" : self.ui.lineEdit_o_sebe.text(),
+                "monet" : 0,
+                "clici" : 0,
+                "za clic" : 1.0,
+                "bonus" : 1.0,           
+                    }
             self.ui.stackedWidget.setCurrentIndex(0)
             self.ui.label_gl_balance.setText(str(self.q["monet"]))
             self.ui.label_gl_clici.setText(str(self.q["clici"]))
             self.ui.label_14.setText(str(self.q["za clic"]))
             self.ui.label_16.setText(str(f"X{self.q["bonus"]}"))
+            self.ui.label_im_pol.setText(str(self.q["name"]))
+            self.ui.label_o_sebe.setText(str(self.q["o sebe"]))
             with open("dann.json","w",encoding="utf-8") as f:
                 json.dump(self.q,f,ensure_ascii=False,indent=4)
-            self.ui.label_im_pol.setText(str(self.q["name"]))
-            self.ui.label_o_sebe.setText(str(self.q["o sebe"]))   
+               
 
-    def clouseEvent(self,event):
+    def closeEvent(self, event):
             self.monet = float(self.ui.label_gl_balance.text())
             self.clici = float(self.ui.label_gl_clici.text())
             self.zaclic = float(self.ui.label_14.text())
-            self.bonus = float(self.ui.label_16.text())
+            self.bonus = float(self.ui.label_16.text().replace("X",""))
 
             self.q["monet"] = self.monet
             self.q["clici"] = self.clici
@@ -1242,7 +1270,18 @@ class MainWindow(QMainWindow):
 
             with open("dann.json","w",encoding="utf-8") as f:
                 json.dump(self.q,f,ensure_ascii=False,indent=4)
-            event.accept()
+
+
+            with open("dosti.json","w",encoding="utf-8") as w:
+                   json.dump(self.dos,w,ensure_ascii=False,indent=4)
+
+            self.setting.setValue("items", json.dumps(self.items))
+
+            event.accept
+
+
+
+            
 
 
 

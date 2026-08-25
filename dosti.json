@@ -1,6 +1,6 @@
 {
-    "1_clic": false,
-    "1000_monet": false,
-    "10000_clic": false,
-    "1000000000_monet": false
+    "1_clic": true,
+    "1000_monet": true,
+    "10000_clic": true,
+    "1000000000_monet": true
 }
