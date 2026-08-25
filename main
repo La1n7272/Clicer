@@ -89,7 +89,7 @@ class MainWindow(QMainWindow):
                self.one_dos.setGeometry(143,15,31,31)
                self.one_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
                self.one_dos.show()
-               self.dos["1_clic"] == True
+               self.dos["1_clic"] = True
         if self.dos["1000_monet"]:
                   self.pa = self.ui.frame_5
                   self.two_dos = QLabel("",self.pa)
@@ -98,7 +98,7 @@ class MainWindow(QMainWindow):
                   self.two_dos.setGeometry(153,78,31,31)
                   self.two_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
                   self.two_dos.show()
-                  self.dos["1000_monet"] == True
+                  self.dos["1000_monet"] = True
         if self.dos["10000_clic"]:
                   self.pa = self.ui.frame_5
                   self.tree_dos = QLabel("",self.pa)
@@ -107,7 +107,7 @@ class MainWindow(QMainWindow):
                   self.tree_dos.setGeometry(153,150,31,31)
                   self.tree_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
                   self.tree_dos.show()
-                  self.dos["10000_clic"] == True
+                  self.dos["10000_clic"] = True
         if self.dos["1000000000_monet"]:
                   self.pa = self.ui.frame_5
                   self.four_dos = QLabel("",self.pa)
@@ -116,7 +116,7 @@ class MainWindow(QMainWindow):
                   self.four_dos.setGeometry(180,218,31,31)
                   self.four_dos.setAttribute(Qt.WA_TransparentForMouseEvents)
                   self.four_dos.show()
-                  self.dos["1000000000_monet"] == True
+                  self.dos["1000000000_monet"] = True
 
 
 
@@ -650,7 +650,7 @@ class MainWindow(QMainWindow):
               self.ui.label_gl_balance.setText(str(self.new_balance))
               self.ui.label_14.setText(str(self.s))
 
-              self.items["125"] == True
+              self.items["125"] = True
 
               self.ui.pushButton_cup_125.setEnabled(False)
               self.ui.pushButton_cup_125.setStyleSheet("""
@@ -687,7 +687,7 @@ class MainWindow(QMainWindow):
                   self.ui.label_gl_balance.setText(str(self.new_balance))
                   self.ui.label_14.setText(str(self.s))
 
-                  self.items["450"] == True
+                  self.items["450"] = True
 
                   self.ui.pushButton_cup450.setEnabled(False)
                   self.ui.pushButton_cup450.setStyleSheet("""
@@ -718,7 +718,7 @@ class MainWindow(QMainWindow):
                   self.ui.label_gl_balance.setText(str(self.new_balance))
                   self.ui.label_14.setText(str(self.s))
 
-                  self.items["1250"] == True
+                  self.items["1250"] = True
 
                   self.ui.pushButton_cup1250.setEnabled(False)
                   self.ui.pushButton_cup1250.setStyleSheet("""
@@ -748,7 +748,7 @@ class MainWindow(QMainWindow):
                   self.ui.label_gl_balance.setText(str(self.new_balance))
                   self.ui.label_14.setText(str(self.s))
 
-                  self.items["12000"] == True
+                  self.items["12000"] = True
 
                   self.ui.pushButton_cup12000.setEnabled(False)
                   self.ui.pushButton_cup12000.setStyleSheet("""
@@ -778,7 +778,7 @@ class MainWindow(QMainWindow):
                   self.ui.label_gl_balance.setText(str(self.new_balance))
                   self.ui.label_14.setText(str(self.s))
 
-                  self.items["50000"] == True
+                  self.items["50000"] = True
 
                   self.ui.pushButton_cup50000.setEnabled(False)
                   self.ui.pushButton_cup50000.setStyleSheet("""
@@ -809,7 +809,7 @@ class MainWindow(QMainWindow):
                   self.ui.label_gl_balance.setText(str(self.new_balance))
                   self.ui.label_16.setText(str(f"X{self.s}"))\
 
-                  self.items["0.5"] == True
+                  self.items["0.5"] = True
 
                   self.ui.pushButton_m_2000.setEnabled(False)
                   self.ui.pushButton_m_2000.setStyleSheet("""
@@ -840,7 +840,7 @@ class MainWindow(QMainWindow):
                       self.ui.label_gl_balance.setText(str(self.new_balance))
                       self.ui.label_16.setText(str(f"X{self.s}"))
 
-                      self.items["1.0"] == True
+                      self.items["1.0"] = True
                       self.ui.pushButton_m_4000.setEnabled(False)
                       self.ui.pushButton_m_4000.setStyleSheet("""
               QPushButton{
@@ -872,7 +872,7 @@ class MainWindow(QMainWindow):
                       self.ui.label_gl_balance.setText(str(self.new_balance))
                       self.ui.label_16.setText(str(f"X{self.s}"))
 
-                      self.items["1.5"] == True
+                      self.items["1.5"] = True
 
                       self.ui.pushButton_m_6000.setEnabled(False)
                       self.ui.pushButton_m_6000.setStyleSheet("""
@@ -904,7 +904,7 @@ class MainWindow(QMainWindow):
                       self.ui.label_gl_balance.setText(str(self.new_balance))
                       self.ui.label_16.setText(str(f"X{self.s}"))
 
-                      self.items["2.0"] == True
+                      self.items["2.0"] = True
 
                       self.ui.pushButton_m_8000.setEnabled(False)
                       self.ui.pushButton_m_8000.setStyleSheet("""
@@ -936,7 +936,7 @@ class MainWindow(QMainWindow):
                       self.ui.label_gl_balance.setText(str(self.new_balance))
                       self.ui.label_16.setText(str(f"X{self.s}"))
 
-                      self.items["2.5"] == True
+                      self.items["2.5"] = True
 
                       self.ui.pushButton_m_10000.setEnabled(False)
                       self.ui.pushButton_m_10000.setStyleSheet("""
@@ -968,7 +968,7 @@ class MainWindow(QMainWindow):
                       self.ui.label_gl_balance.setText(str(self.new_balance))
                       self.ui.label_16.setText(str(f"X{self.s}"))
 
-                      self.items["3.0"] == True
+                      self.items["3.0"] = True
 
                       self.ui.pushButton_m_12000.setEnabled(False)
                       self.ui.pushButton_m_12000.setStyleSheet("""
@@ -1000,7 +1000,7 @@ class MainWindow(QMainWindow):
                       self.ui.label_gl_balance.setText(str(self.new_balance))
                       self.ui.label_16.setText(str(f"X{self.s}"))
 
-                      self.items["3.5"] == True
+                      self.items["3.5"] = True
 
                       self.ui.pushButton_m_14000.setEnabled(False)
                       self.ui.pushButton_m_14000.setStyleSheet("""
@@ -1032,7 +1032,7 @@ class MainWindow(QMainWindow):
                       self.ui.label_gl_balance.setText(str(self.new_balance))
                       self.ui.label_16.setText(str(f"X{self.s}"))
 
-                      self.items["4.0"] == True
+                      self.items["4.0"] = True
 
                       self.ui.pushButton_m_16000.setEnabled(False)
                       self.ui.pushButton_m_16000.setStyleSheet("""
@@ -1059,7 +1059,7 @@ class MainWindow(QMainWindow):
                 self.ui.label_gl_balance.setText(str(self.new_balance))
                 self.s_u()
 
-                self.items["u"] == True
+                self.items["u"] = True
 
                 self.ui.pushButton_m_u.setEnabled(False)
                 self.ui.pushButton_m_u.setStyleSheet("""
@@ -1087,7 +1087,7 @@ class MainWindow(QMainWindow):
                     self.ui.label_gl_balance.setText(str(self.new_balance))
                     self.s_g()
 
-                    self.items["g"] == True
+                    self.items["g"] = True
 
                     self.ui.pushButton_m_g.setEnabled(False)
                     self.ui.pushButton_m_g.setStyleSheet("""
@@ -1115,7 +1115,7 @@ class MainWindow(QMainWindow):
                     self.ui.label_gl_balance.setText(str(self.new_balance))
                     self.s_s()
 
-                    self.items["s"] == True
+                    self.items["s"] = True
 
                     self.ui.pushButton_m_s.setEnabled(False)
                     self.ui.pushButton_m_s.setStyleSheet("""
@@ -1278,17 +1278,6 @@ class MainWindow(QMainWindow):
             self.setting.setValue("items", json.dumps(self.items))
 
             event.accept
-
-
-
-            
-
-
-
-
-
-
-                
 
 if __name__ == "__main__":
     app = QApplication([])
